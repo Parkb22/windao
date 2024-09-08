@@ -1,0 +1,222 @@
+/* Main Airdrop Panel */
+.airdrop-panel {
+    width: 550px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    font-family: 'Segoe UI', sans-serif; /* Modern font */
+    border-radius: 8px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Title Bar */
+.airdrop-title-bar {
+    background-color: #0078d7; /* Windows 10 blue */
+    color: white;
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    border-radius: 8px 8px 0 0;
+}
+
+.airdrop-close-btn {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.airdrop-close-btn:hover {
+    color: #e5e5e5;
+}
+
+/* Tabs Navigation */
+.airdrop-tabs {
+    display: flex;
+    justify-content: space-around;
+    padding: 12px;
+    background-color: #f1f1f1; /* Subtle background for tabs */
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.airdrop-tabs button {
+    background-color: #f1f1f1;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.airdrop-tabs button:hover {
+    background-color: #e0e0e0;
+}
+
+.airdrop-tabs button.active {
+    background-color: #0078d7;
+    color: white;
+}
+
+/* Content Area */
+.airdrop-content {
+    background-color: #ffffff;
+    padding: 24px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* Info Section */
+.info-section {
+    padding: 16px;
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-section p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.info-section p span {
+    font-weight: bold;
+    color: #0078d7; /* Windows 10 blue */
+}
+
+/* Leaderboard List */
+.leaderboard-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+.leaderboard-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    font-weight: bold;
+    color: #333;
+}
+
+.leaderboard-list li:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+.leaderboard-list li:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.pagination button {
+    background-color: #0078d7;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.pagination button:hover {
+    background-color: #005a9e;
+}
+
+/* Modal for in-app alerts */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    z-index: 200;
+    width: 350px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.modal-content {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.modal button {
+    background-color: #0078d7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.modal button:hover {
+    background-color: #005a9e;
+}
+
+/* Task and Button Styles */
+.task-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.task-btn {
+    background-color: #0078d7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.task-btn:hover {
+    background-color: #005a9e;
+}
+
+.task-btn.disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}

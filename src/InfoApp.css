@@ -1,0 +1,98 @@
+.info-app {
+    width: 600px;
+    height: 400px;
+    background-color: black;
+    border: 2px solid #A8A8A8;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* Ensure flexbox layout */
+    justify-content: space-between; /* Push content inside */
+  }
+  
+  .info-title-bar {
+    background-color: #3775D4;
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+    cursor: move; /* Makes the title bar draggable */
+  }
+  
+  .info-close-btn {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .info-content {
+    padding: 10px;
+    color: #00ff00;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .output-area {
+    flex-grow: 1;
+    white-space: pre-wrap;
+    color: #00aced;
+    margin-bottom: 10px;
+    overflow: auto; /* Allow scrolling but hide scrollbar */
+  }
+  
+  .output-area::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar for Webkit browsers (Chrome, Safari, etc.) */
+  }
+  
+  .output-area {
+    -ms-overflow-style: none;  /* Hide scrollbar for Internet Explorer and Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+  }
+  
+  .command-line {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    background-color: black; /* Ensure background consistency */
+    padding: 10px;
+    border-top: 2px solid #00aced;
+  }
+  
+  .prompt-line {
+    color: #00ff00;
+    margin-right: 5px;
+  }
+  
+  .command-input {
+    flex-grow: 1;
+    padding: 5px;
+    font-size: 16px;
+    color: #00ff00;
+    background-color: black;
+    border: none;
+    outline: none;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .tutorial {
+    color: teal;
+    margin-bottom: 10px;
+  }
+  
+  .command {
+    color: yellow;
+  }
+  

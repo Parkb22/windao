@@ -1,38 +1,262 @@
-.App {
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', sans-serif;
+  background-image: url('https://i.redd.it/a9vjztlbnys71.png'); /* Windows XP background */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.desktop {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Taskbar */
+.taskbar {
+  background-color: #3C8DFF;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  border-top: 2px solid #ffffff;
+}
+
+.start-button {
+  background-color: #5af161;
+  color: white;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.start-button:hover {
+  background-color: #1cc416;
+}
+
+/* Clock */
+.clock {
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Centered text in the taskbar */
+.taskbar-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
   text-align: center;
+  flex-grow: 1;
+  text-shadow: 1px 1px 2px #000;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Start Menu */
+.start-menu {
+  position: absolute;
+  bottom: 60px;
+  left: 10px;
+  background-color: #E0E0E0;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  z-index: 11;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.start-menu button {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0;
+  background-color: #E0E0E0;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.start-menu button:hover {
+  background-color: #D4D4D4;
+}
+
+/* Draggable Desktop Icons */
+.desktop-icon {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  margin: 15px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 30px;
+}
+
+.desktop-icon span:last-child {
+  margin-top: 5px;
+  font-size: 18px;
+  color: white;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Popup Styles */
+.popup {
+  width: 350px;
+  background-color: #F0F0F0;
+  border: 2px solid #A8A8A8;
+  padding: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  font-family: 'Arial', sans-serif;
+  border-radius: 10px;
+}
+
+.popup-title-bar {
+  background-color: #3775D4;
+  color: white;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 10px 10px 0 0;
+}
+
+.popup-close-btn {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.popup-content {
+  background-color: #F0F0F0;
+  padding: 10px;
+}
+
+.popup-body {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.popup-actions button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: 1px solid #A8A8A8;
+  background-color: #F0F0F0;
+  cursor: pointer;
+}
+
+.popup-actions button:hover {
+  background-color: #D8D8D8;
+}
+
+/* Calculator Styles */
+.calculator {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 10px;
+  padding: 20px;
+  background-color: #F0F0F0;
+  border: 2px solid #A8A8A8;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.calculator-display {
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  text-align: right;
+  margin-bottom: 10px;
+  background-color: white;
+  border: 1px solid #ddd;
+}
+
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 50px);
+  gap: 5px;
+}
+
+.calculator-buttons button {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #E0E0E0;
+  border: 1px solid #A8A8A8;
+}
+
+.calculator-buttons button:hover {
+  background-color: #D4D4D4;
+}
+
+/* Post-it Note */
+.post-it {
+  width: 200px;
+  height: 200px;
+  background-color: #ffeb3b;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+  resize: none;
+}
+
+.post-it textarea {
+  width: 100%;
+  height: calc(100% - 30px);
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
+  resize: none;
+  outline: none;
+}
+
+.post-it-close-btn {
+  background-color: transparent;
   color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Ensuring Draggable Items Stay Within Desktop */
+.draggable {
+  max-width: 100%;
+  max-height: 100%;
 }
